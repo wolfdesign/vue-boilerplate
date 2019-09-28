@@ -1,15 +1,24 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+// Pages
+import Home from "./pages/Home/Home.vue";
+import Contact from "./pages/Contact/Contact.vue";
 
 Vue.use(Router);
 
 export default new Router({
+  // removes #, more info on https://router.vuejs.org/guide/essentials/history-mode.html
+  mode: "history",
   routes: [
     {
-      path: "/",
       name: "home",
+      path: "/",
       component: Home
+    },
+    {
+      name: "contact",
+      path: "/contact",
+      component: Contact
     },
     {
       path: "/about",
@@ -18,7 +27,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+        import(/* webpackChunkName: "about" */ "./pages/About/About.vue")
     }
   ]
 });
