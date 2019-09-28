@@ -1,2 +1,3 @@
+# for GitHub language
 * linguist-vendored
 *.ts linguist-vendored=false
